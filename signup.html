@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up â€” AWEDI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="assets/css/style.css?v=1.3.0">
+</head>
+<body>
+    <div id="toast-container"></div>
+    <div id="header-placeholder"></div>
+
+    <main class="page-wrap">
+        <div class="auth-wrap">
+            <div class="auth-card" style="max-width: 480px;">
+                <div class="auth-logo">
+                    <svg viewBox="0 0 24 24"><path d="M12,2L4.5,20.29L5.21,21L12,18L18.79,21L19.5,20.29L12,2Z" /></svg>
+                </div>
+                <h1 class="auth-title">Join the Movement</h1>
+                <p class="auth-sub">Create an account to start your journey with AWEDI.</p>
+
+                <form id="signup-form">
+                    <div class="form-grid" style="margin-bottom: 16px;">
+                        <div class="fg">
+                            <label class="fl">First Name</label>
+                            <input type="text" id="signup-fname" class="fi" placeholder="John" required>
+                        </div>
+                        <div class="fg">
+                            <label class="fl">Last Name</label>
+                            <input type="text" id="signup-lname" class="fi" placeholder="Doe" required>
+                        </div>
+                    </div>
+                    <div class="fg" style="margin-bottom: 16px;">
+                        <label class="fl">Email Address</label>
+                        <input type="email" id="signup-email" class="fi" placeholder="name@example.com" required>
+                    </div>
+                    <div class="fg" style="margin-bottom: 20px;">
+                        <label class="fl">Password</label>
+                        <input type="password" id="signup-pass" class="fi" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" required>
+                    </div>
+                    <button type="submit" id="signup-submit-btn" class="btn-auth-main">Join Us â†’</button>
+                </form>
+
+                <div class="auth-divider">
+                    <div class="auth-divider-line"></div>
+                    <div class="auth-divider-text">OR</div>
+                    <div class="auth-divider-line"></div>
+                </div>
+
+                <button class="social-btn">
+                    <img src="https://www.google.com/favicon.ico" width="16" height="16" alt="Google">
+                    Sign up with Google
+                </button>
+
+                <p class="auth-switch">Already have an account? <a href="signin.html" style="color:var(--accent); font-weight:600; text-decoration:none;">Sign In</a></p>
+                
+                <p class="auth-terms">By joining, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
+            </div>
+        </div>
+        <div id="footer-placeholder"></div>
+    </main>
+
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/script.js?v=2.0.0"></script>
+    <script src="assets/js/auth.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof loadIncludes === 'function') loadIncludes();
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

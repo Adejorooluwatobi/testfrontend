@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us — AWEDI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="assets/css/style.css?v=2.1.6">
+</head>
+<body>
+    <div id="toast-container"></div>
+    <div id="header-placeholder"></div>
+
+    <main class="page-wrap">
+        <div class="page-wrap">
+    <div class="main-content">
+            <section class="section" style="background:linear-gradient(135deg,var(--accent) 0%,var(--accent2) 100%);padding:80px 5% 60px;">
+        <div class="section-inner" style="text-align:center;">
+          <div style="font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.7);margin-bottom:10px;" id="about-banner-header">Loading...</div>
+          <h1 style="font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,56px);font-weight:900;color:#fff;margin-bottom:14px;" id="about-banner-title">...</h1>
+          <p style="font-size:17px;color:rgba(255,255,255,.78);max-width:560px;margin:0 auto;line-height:1.7;" id="about-banner-desc">...</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-inner">
+          <div class="mission-grid">
+            <div>
+              <div class="section-eyebrow"><div class="section-eyebrow-line"></div><span id="about-mission-eyebrow">Our Mission</span></div>
+              <h2 class="section-title" id="about-mission-title">...</h2>
+              <div id="about-mission-desc">
+                <!-- Populated by JS -->
+              </div>
+              <div class="values-grid" id="about-values-grid">
+                <!-- Populated by JS -->
+              </div>
+            </div>
+            <div class="mission-visual">
+              <div class="mission-img-block">
+                <div style="font-size:48px;margin-bottom:16px;" id="about-vision-icon">🌍</div>
+                <h3 id="about-vision-title">Our Vision</h3>
+                <p id="about-vision-desc">...</p>
+                <div style="margin-top:20px;background:rgba(255,255,255,.15);border-radius:10px;padding:14px;">
+                  <div style="font-size:11px;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;">Impact Goal Progress</div>
+                  <div style="background:rgba(255,255,255,.2);border-radius:20px;height:8px;overflow:hidden;"><div style="width:0%;height:100%;background:var(--gold2);border-radius:20px;" id="about-vision-bar"></div></div>
+                  <div style="font-size:12px;color:rgba(255,255,255,.7);margin-top:6px;" id="about-vision-progress-label">Loading progress...</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TEAM -->
+      <section class="section section-alt">
+        <div class="section-inner">
+          <div class="section-header center">
+            <div class="section-eyebrow"><div class="section-eyebrow-line"></div><span id="about-team-eyebrow">The People</span></div>
+            <h2 class="section-title" id="about-team-title">Meet Our Leadership</h2>
+            <p id="about-team-desc" style="font-size:16px;color:var(--muted);max-width:700px;margin:12px auto 30px;line-height:1.6;"></p>
+          </div>
+          <div class="team-grid" id="about-team-grid">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- TIMELINE -->
+      <section class="section">
+        <div class="section-inner" style="max-width:700px;margin:0 auto;">
+          <div class="section-header center"><div class="section-eyebrow"><div class="section-eyebrow-line"></div>Our Journey</div><h2 class="section-title">12 Years of Impact</h2></div>
+          <div class="timeline" id="about-timeline">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </section>
+        </div>
+        </div>
+        <div id="footer-placeholder"></div>
+    </main>
+
+    <script src="assets/js/config.js?v=2.1.16"></script>
+    <script src="assets/js/dummy-data.js?v=2.1.16"></script>
+    <script src="assets/js/script.js?v=2.1.16"></script>
+    <script src="assets/js/about.js?v=2.1.16"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof loadIncludes === 'function') loadIncludes();
+            if (typeof initAbout === 'function') initAbout();
+        });
+    </script>
+</body>
+</html>

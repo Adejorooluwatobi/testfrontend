@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer With Us — AWEDI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="assets/css/style.css?v=2.1.6">
+</head>
+<body>
+    <div id="toast-container"></div>
+    <div id="header-placeholder"></div>
+
+    <main class="page-wrap">
+        <div class="main-content">
+      <section class="section" style="background:linear-gradient(135deg,#1a5c3a,#c9962a);padding:80px 5% 60px;">
+        <div class="section-inner" style="text-align:center;">
+          <div id="vol-banner-header" style="font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.7);margin-bottom:10px;">Loading...</div>
+          <h1 id="vol-banner-title" style="font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,52px);font-weight:900;color:#fff;margin-bottom:14px;">...</h1>
+          <p id="vol-banner-desc" style="font-size:16px;color:rgba(255,255,255,.75);max-width:520px;margin:0 auto;line-height:1.7;">...</p>
+        </div>
+      </section>
+      <section class="section">
+        <div class="section-inner">
+          <div class="section-header center"><div class="section-eyebrow"><div class="section-eyebrow-line"></div><span id="vol-section-header">Loading...</span></div><h2 class="section-title" id="vol-section-title">...</h2></div>
+          <div class="benefit-grid" id="vol-benefits-grid">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </section>
+      <section class="section section-alt">
+        <div class="section-inner">
+          <div class="section-header center"><div class="section-eyebrow"><div class="section-eyebrow-line"></div>Apply Now</div><h2 class="section-title">Volunteer Application Form</h2></div>
+          <div class="form-page-wrap">
+            <div class="card card-pad">
+              <form id="vol-app-form">
+              <div class="form-grid">
+                <div class="fg"><label class="fl">First Name *</label><input class="fi" type="text" id="vol-firstname" placeholder="Emeka" required/></div>
+                <div class="fg"><label class="fl">Last Name *</label><input class="fi" type="text" id="vol-lastname" placeholder="Okafor" required/></div>
+                <div class="fg"><label class="fl">Email Address *</label><input class="fi" type="email" id="vol-email" placeholder="emeka@email.com" required/></div>
+                <div class="fg"><label class="fl">Phone Number *</label><input class="fi" type="tel" id="vol-phone" placeholder="+234 801 234 5678" required/></div>
+                <div class="fg"><label class="fl">State of Residence</label><select class="fs" id="vol-state"><option value="">— Select State —</option><option>Lagos</option><option>Abuja (FCT)</option><option>Kano</option><option>Rivers</option><option>Ogun</option><option>Other</option></select></div>
+                <div class="fg"><label class="fl">Availability</label><select class="fs" id="vol-availability"><option>Weekends Only</option><option>Weekdays Only</option><option>Full-time (3+ months)</option><option>Remote / Online</option></select></div>
+                <div class="fg"><label class="fl">Area of Expertise</label><select class="fs" id="vol-expertise"><option value="">— Select —</option><option>Education / Teaching</option><option>Healthcare / Medical</option><option>Engineering / Technical</option><option>Communications / PR</option><option>Finance / Accounting</option><option>Social Work / Counseling</option><option>IT / Digital</option><option>Other</option></select></div>
+                <div class="fg"><label class="fl">Preferred Program</label><select class="fs" id="vol-program"><option>Any Program</option><option>Child Literacy Drive</option><option>Clean Water Initiative</option><option>Rural Health Outreach</option><option>Women in Business</option><option>Youth Skills Training</option></select></div>
+                <div class="fg full"><label class="fl">Why Do You Want to Volunteer?</label><textarea class="fta" id="vol-motivation" placeholder="Tell us about your motivation…"></textarea></div>
+              </div>
+              <div class="form-footer"><button type="reset" class="btn-secondary">Clear Form</button><button type="submit" id="vol-submit-btn" class="btn-submit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:16px;height:16px;"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>Submit Application</button></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+        <div id="footer-placeholder"></div>
+    </main>
+
+    <script src="assets/js/config.js?v=2.1.16"></script>
+    <script src="assets/js/dummy-data.js?v=2.1.16"></script>
+    <script src="assets/js/script.js?v=2.1.16"></script>
+    <script src="assets/js/volunteer.js?v=2.1.16"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof loadIncludes === 'function') loadIncludes();
+            if (typeof initVolunteer === 'function') initVolunteer();
+        });
+    </script>
+</body>
+</html>

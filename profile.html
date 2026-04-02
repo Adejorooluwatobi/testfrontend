@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile â€” AWEDI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="assets/css/style.css?v=1.3.0">
+</head>
+<body>
+    <div id="toast-container"></div>
+    <div id="header-placeholder"></div>
+
+    <main class="page-wrap">
+        <div class="main-content">
+      <section class="section">
+        <div class="section-inner" style="max-width:860px;margin:0 auto;">
+          <div class="profile-banner">
+            <div class="prof-av-lg" id="profile-av-lg">JD</div>
+            <div style="z-index:1;">
+              <div class="profile-name" id="profile-display-name">John Doe</div>
+              <div style="color:rgba(255,255,255,.75);font-size:13px;margin:4px 0 10px;" id="profile-display-email">john@email.com</div>
+              <span class="profile-role">Community Member</span>
+              <div style="display:flex;gap:9px;margin-top:14px;flex-wrap:wrap;">
+                <button style="background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:9px;padding:8px 16px;color:#fff;font-size:13px;font-weight:600;cursor:pointer;" onclick="document.getElementById('prof-phone').focus();">Edit Profile</button>
+                <button style="background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:9px;padding:8px 16px;color:#fff;font-size:13px;font-weight:600;cursor:pointer;" onclick="showPage('donate')">Donate Now 💚</button>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:24px;">
+            <div class="stat-card"><div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--accent);" id="metric-donated">₦0</div><div class="stat-lbl">Total Donated</div></div>
+            <div class="stat-card"><div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--terra);" id="metric-events">0</div><div class="stat-lbl">Events Attended</div></div>
+            <div class="stat-card"><div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--gold);" id="metric-hours">0hrs</div><div class="stat-lbl">Volunteer Hours</div></div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:24px;" id="profile-grid">
+            <div>
+              <div class="card card-pad" style="margin-bottom:20px;">
+                <div style="font-family:'Playfair Display',serif;font-size:16px;font-weight:700;margin-bottom:16px;">Account Information</div>
+                <div class="profile-details-grid">
+                  <div class="pd-card"><div class="pd-label">Full Name</div><div class="pd-val" id="pd-name">John Doe</div></div>
+                  <div class="pd-card"><div class="pd-label">Email</div><div class="pd-val" id="pd-email">john@email.com</div></div>
+                  <div class="pd-card"><div class="pd-label">Date of Birth</div><div class="pd-val" id="pd-dob">Not provided</div></div>
+                  <div class="pd-card"><div class="pd-label">Phone</div><div class="pd-val" id="pd-phone">Not provided</div></div>
+                  <div class="pd-card"><div class="pd-label">Location</div><div class="pd-val" id="pd-location">Not provided</div></div>
+                  <div class="pd-card"><div class="pd-label">Member Since</div><div class="pd-val" id="pd-member-since">Just joined</div></div>
+                  <div class="pd-card"><div class="pd-label">Role</div><div class="pd-val">Community Member</div></div>
+                </div>
+              </div>
+              <div class="card card-pad">
+                <div style="font-family:'Playfair Display',serif;font-size:16px;font-weight:700;margin-bottom:14px;">Update Profile Details</div>
+                <form id="profile-update-form">
+                <div class="form-grid">
+                  <div class="fg full"><label class="fl">Date of Birth</label><input class="fi" type="date" id="prof-dob"/></div>
+                  <div class="fg"><label class="fl">Phone Number</label><input class="fi" type="tel" id="prof-phone" placeholder="e.g. +234 801 234 5678"/></div>
+                  <div class="fg"><label class="fl">City</label><input class="fi" type="text" id="prof-city" placeholder="e.g. Lagos"/></div>
+                  <div class="fg"><label class="fl">State / Region</label><input class="fi" type="text" id="prof-state" placeholder="e.g. Lagos State"/></div>
+                  <div class="fg"><label class="fl">Country</label><input class="fi" type="text" id="prof-country" placeholder="e.g. Nigeria"/></div>
+                  <div class="fg full"><label class="fl">Full Address</label><input class="fi" type="text" id="prof-address" placeholder="e.g. 14 Blantyre Street, Wuse 2"/></div>
+                  <div class="fg full"><label class="fl">Short Bio</label><textarea class="fta" id="prof-bio" placeholder="Tell us a bit about yourself..."></textarea></div>
+                </div>
+                <div class="form-footer"><button type="submit" id="prof-submit-btn" class="btn-submit">Save Changes</button></div>
+                </form>
+              </div>
+            </div>
+            <div>
+              <div class="card card-pad">
+                <div style="font-family:'Playfair Display',serif;font-size:16px;font-weight:700;margin-bottom:14px;">Recent Activity</div>
+                <div class="activity-list" id="activity-list">
+                  <!-- Populated by assets/js/profile.js -->
+                  <div class="act-item"><div class="act-dot-c"><div class="act-d blue"></div></div><div><div class="act-msg">Joined AWEDI community</div><div class="act-time">Just now</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+        <div id="footer-placeholder"></div>
+    </main>
+
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/script.js?v=2.0.0"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/profile.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            if (typeof loadIncludes === 'function') {
+                await loadIncludes();
+                if (typeof initProfile === 'function') initProfile();
+            }
+        });
+    </script>
+</body>
+</html>

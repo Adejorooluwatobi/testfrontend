@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In â€” AWEDI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="assets/css/style.css?v=2.1.16">
+</head>
+<body>
+    <div id="toast-container"></div>
+    <div id="header-placeholder"></div>
+
+    <main class="page-wrap">
+        <div class="auth-wrap">
+            <div class="auth-card">
+                <div class="auth-logo">
+                    <svg viewBox="0 0 24 24"><path d="M12,2L4.5,20.29L5.21,21L12,18L18.79,21L19.5,20.29L12,2Z" /></svg>
+                </div>
+                <h1 class="auth-title">Welcome Back</h1>
+                <p class="auth-sub">Sign in to manage your donations and track your impact.</p>
+
+                <form id="signin-form">
+                    <div class="fg" style="margin-bottom: 16px;">
+                        <label class="fl">Email Address</label>
+                        <input type="email" id="signin-email" class="fi" placeholder="name@example.com" required>
+                    </div>
+                    <div class="fg" style="margin-bottom: 20px;">
+                        <div style="display:flex; justify-content:space-between; align-items:center;">
+                            <label class="fl">Password</label>
+                            <a href="#" style="font-size:11px; color:var(--accent); text-decoration:none; font-weight:600;">Forgot?</a>
+                        </div>
+                        <input type="password" id="signin-pass" class="fi" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" required>
+                    </div>
+                    <button type="submit" id="signin-submit-btn" class="btn-auth-main">Sign In â†’</button>
+                </form>
+
+                <div class="auth-divider">
+                    <div class="auth-divider-line"></div>
+                    <div class="auth-divider-text">OR</div>
+                    <div class="auth-divider-line"></div>
+                </div>
+
+                <button class="social-btn">
+                    <img src="https://www.google.com/favicon.ico" width="16" height="16" alt="Google">
+                    Continue with Google
+                </button>
+
+                <p class="auth-switch">Don't have an account? <a href="signup.html" style="color:var(--accent); font-weight:600; text-decoration:none;">Join Us</a></p>
+            </div>
+        </div>
+        <div id="footer-placeholder"></div>
+    </main>
+
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/script.js?v=2.0.0"></script>
+    <script src="assets/js/auth.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof loadIncludes === 'function') loadIncludes();
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

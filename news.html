@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Updates — AWEDI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="assets/css/style.css?v=2.1.6">
+</head>
+<body>
+    <div id="toast-container"></div>
+    <div id="header-placeholder"></div>
+
+    <main class="page-wrap">
+        <div class="main-content">
+      <section class="section" style="background:linear-gradient(135deg,#1a2a4a,#2a4a8a);padding:80px 5% 60px;">
+        <div class="section-inner" style="text-align:center;">
+          <h1 id="news-banner-header" style="font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,52px);font-weight:900;color:#fff;margin-bottom:14px;">Loading...</h1>
+          <h2 id="news-banner-title" style="display:none;font-size:22px;font-weight:600;color:rgba(255,255,255,.9);margin-bottom:10px;"></h2>
+          <p id="news-banner-desc" style="font-size:16px;color:rgba(255,255,255,.75);max-width:520px;margin:0 auto;line-height:1.7;">...</p>
+        </div>
+      </section>
+      <section class="section">
+        <div class="section-inner">
+          <div class="news-grid" id="news-grid">
+            <!-- Populated by assets/js/news.js -->
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- NEWS DETAIL MODAL -->
+    <div id="news-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-close" onclick="closeNewsModal()">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"></path></svg>
+            </div>
+            <div id="modal-news-banner" class="news-modal-banner"></div>
+            <div class="modal-info-scroll">
+                <div class="modal-info">
+                    <div class="news-modal-meta">
+                        <span id="modal-news-tag" class="news-tag" style="margin-bottom:0;">CATEGORY</span>
+                        <span id="modal-news-date" style="opacity:0.6;">DATE</span>
+                    </div>
+                    <h2 id="modal-news-title" class="modal-title">News Title</h2>
+                    <div id="modal-news-desc" class="modal-full-desc">
+                        <!-- Full Content -->
+                    </div>
+                </div>
+                <div style="margin-top:20px; padding: 0 40px 40px; display:flex; flex-direction: column; gap:12px;">
+                    <a id="modal-view-news-page" href="#" class="btn-view-page" style="width:100%; text-align:center;">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:4px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"></path></svg>
+                        Read Full Article on New Page
+                    </a>
+                    <button class="btn-ol" style="width:100%; padding:14px;" onclick="closeNewsModal()">Back to News</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+    </main>
+
+    <script src="assets/js/config.js?v=2.1.16"></script>
+    <script src="assets/js/dummy-data.js?v=2.1.16"></script>
+    <script src="assets/js/script.js?v=2.1.16"></script>
+    <script src="assets/js/news.js?v=2.1.16"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof loadIncludes === 'function') loadIncludes();
+            if (typeof initNews === 'function') initNews();
+        });
+    </script>
+</body>
+</html>

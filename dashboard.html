@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard — AWEDI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="assets/css/style.css?v=1.3.0">
+    <style>
+        .dash-grid { display: grid; grid-template-columns: 240px 1fr; min-height: 100vh; }
+        .dash-sidebar { background: var(--surface); border-right: 1.5px solid var(--border); padding: 24px 16px; position: sticky; top: 0; height: 100vh; }
+        .dash-nav-item { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 10px; color: var(--muted); font-size: 14px; font-weight: 500; cursor: pointer; transition: all .2s; margin-bottom: 4px; }
+        .dash-nav-item:hover { background: var(--surface2); color: var(--text); }
+        .dash-nav-item.active { background: rgba(30,92,58,.08); color: var(--accent); font-weight: 600; }
+        .dash-content { padding: 40px 5%; background: var(--bg2); }
+        .dash-card { background: var(--surface); border: 1.5px solid var(--border); border-radius: 16px; padding: 24px; box-shadow: 0 4px 12px var(--shadow); }
+        .dash-stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-bottom: 32px; }
+        .chart-placeholder { height: 300px; background: var(--surface2); border-radius: 12px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+        .bar { width: 30px; background: var(--accent); border-radius: 4px 4px 0 0; transition: height 1s; }
+    </style>
+</head>
+<body>
+    <div id="toast-container"></div>
+    <div id="header-placeholder"></div>
+
+    <main class="page-wrap">
+        <div class="dash-grid">
+            <aside class="dash-sidebar">
+                <div style="margin-bottom:32px; padding-left:16px;">
+                    <div style="font-family:'Playfair Display',serif; font-size:18px; font-weight:700; color:var(--accent);">Dashboard</div>
+                    <div style="font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:1px;">Management Portal</div>
+                </div>
+                <nav>
+                    <div class="dash-nav-item active"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Overview</div>
+                    <div class="dash-nav-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Beneficiaries</div>
+                    <div class="dash-nav-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Donations</div>
+                    <div class="dash-nav-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>Programs</div>
+                    <div class="dash-nav-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Feedback</div>
+                    <div class="dash-sep" style="height:1px; background:var(--border); margin:16px 0;"></div>
+                    <div class="dash-nav-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>Settings</div>
+                </nav>
+            </aside>
+
+            <section class="dash-content">
+                <header style="display:flex; justify-content:space-between; align-items:center; margin-bottom:40px;">
+                    <div>
+                        <h1 class="section-title" id="dash-welcome" style="margin-bottom:4px;">Loading...</h1>
+                        <p style="color:var(--muted); font-size:14px;">Here is what's happening with AWEDI today.</p>
+                    </div>
+                    <div style="display:flex; gap:12px;">
+                        <button class="btn-ol"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Export Report</button>
+                        <button class="btn-accent" onclick="initDashboard()">Refresh Data</button>
+                    </div>
+                </header>
+
+                <div class="dash-stat-grid">
+                    <!-- Populated by JS -->
+                </div>
+
+                <div style="display:grid; grid-template-columns: 2fr 1fr; gap:24px;">
+                    <div class="dash-card">
+                        <h3 style="font-family:'Playfair Display',serif; font-size:20px; font-weight:700; margin-bottom:24px;">Donation Trends (6 Months)</h3>
+                        <div class="chart-placeholder" id="chart-donations">
+                            <div style="display:flex; align-items:flex-end; gap:24px; height:200px;">
+                                <!-- Bars populated by JS -->
+                            </div>
+                            <div style="position:absolute; bottom:20px; left:0; right:0; display:flex; justify-content:center; gap:36px; font-size:11px; color:var(--muted); font-weight:700;">
+                                <!-- Labels populated by JS -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dash-card">
+                        <h3 style="font-family:'Playfair Display',serif; font-size:20px; font-weight:700; margin-bottom:24px;">Recent Activity</h3>
+                        <div class="activity-list">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div id="footer-placeholder"></div>
+    </main>
+
+    <script src="assets/js/config.js?v=1.3.0"></script>
+    <script src="assets/js/dummy-data.js?v=1.3.0"></script>
+    <script src="assets/js/script.js?v=1.3.0"></script>
+    <script src="assets/js/dashboard.js?v=1.3.0"></script>
+</body>
+</html>

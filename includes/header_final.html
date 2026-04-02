@@ -1,0 +1,139 @@
+<!-- Ã¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•Â
+     HEADER
+Ã¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•Â -->
+<header id="site-header">
+  <a class="nav-brand" href="index.html">
+    <img src="assets/img/20260325_155744.png" alt="AWEDI Logo" class="brand-logo-img">
+    <div>
+      <div class="brand-name">AWEDI</div>
+      <div class="brand-tagline">African Women in Energy Development Initiative</div>
+    </div>
+  </a>
+
+  <!-- Desktop nav -->
+  <nav class="nav-links" id="desktop-nav">
+    <a href="index.html" class="nav-link" id="nl-home">Home</a>
+    <a href="about.html" class="nav-link" id="nl-about">About</a>
+    <a href="programs.html" class="nav-link" id="nl-programs">Programs</a>
+    <a href="volunteer.html" class="nav-link" id="nl-volunteer">Volunteer</a>
+    <a href="donate.html" class="nav-link" id="nl-donate">Donate</a>
+    <a href="news.html" class="nav-link" id="nl-news">News</a>
+    <a href="contact.html" class="nav-link" id="nl-contact">Contact</a>
+  </nav>
+
+  <div class="nav-right">
+    <!-- Hamburger — opens the dialog -->
+    <button class="hamburger" id="hamburger" aria-label="Open menu" role="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+
+    <!-- Theme toggle -->
+    <button class="theme-btn" onclick="toggleTheme(window.event || event)" title="Toggle theme">
+      <svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+
+    <!-- Notifications -->
+    <div style="position:relative;" id="notif-wrap">
+      <button class="nav-icon-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+        <div class="notif-badge" id="notif-badge"></div>
+      </button>
+      <div class="notif-panel" id="notif-panel">
+        <div class="np-header"><span class="np-title">Notifications</span><span class="np-mark" onclick="markNotifRead()">Mark all read</span></div>
+        <div class="np-item"><div class="np-dot"></div><div><div class="np-text">Your volunteer application has been <strong>received</strong>. We'll be in touch!</div><div class="np-time">Just now</div></div></div>
+        <div class="np-item"><div class="np-dot"></div><div><div class="np-text">New program launching: <strong>Girls in STEM 2025</strong>. Applications open.</div><div class="np-time">2 hours ago</div></div></div>
+        <div class="np-item"><div class="np-dot"></div><div><div class="np-text"><strong>Community Health Fair</strong> — March 28th, Lagos Island. Register now!</div><div class="np-time">Yesterday</div></div></div>
+        <div class="np-item"><div class="np-empty"></div><div><div class="np-text">Thank you for donating! Your impact report for <strong>Q1 2025</strong> is ready.</div><div class="np-time">2 days ago</div></div></div>
+        <div style="padding:10px 15px;text-align:center;border-top:1px solid var(--border);"><span style="font-size:12px;color:var(--accent);cursor:pointer;font-weight:600;">View all notifications →</span></div>
+      </div>
+    </div>
+
+    <!-- Auth buttons (logged out) -->
+    <a href="signin.html" class="btn-ghost-nav" id="signin-header-btn">Sign In</a>
+    <a href="signup.html" class="btn-fill-nav" id="signup-header-btn">Join Us</a>
+
+    <!-- Profile button (logged in) -->
+    <div style="position:relative;display:none;" id="prof-wrap">
+      <div class="prof-btn" role="button" tabindex="0">
+        <div class="prof-av" id="header-av">JD</div>
+        <span class="prof-btn-name" id="header-name">John Doe</span>
+        <svg class="prof-chev" id="prof-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        
+        <!-- Dropdown moved inside for unbreakable mapping -->
+        <div class="dd-menu" id="header-profile-dropdown">
+          <div class="dd-header">
+            <div style="font-family:'Playfair Display',serif;font-size:15px;font-weight:700;" id="dd-name">John Doe</div>
+            <div style="font-size:12px;color:var(--muted);" id="dd-email">john@email.com</div>
+          </div>
+          <div class="dd-item" onclick="window.location.href='profile.html';closeDD()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>My Profile</div>
+          <div class="dd-item" onclick="window.location.href='donate.html';closeDD()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Donate Now</div>
+          <div class="dd-item" onclick="window.location.href='volunteer.html';closeDD()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78z"/></svg>Volunteer</div>
+          <div class="dd-sep"></div>
+          <div class="dd-item danger" onclick="doLogout()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Sign Out</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Ã¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•Â
+     MOBILE MENU — native <dialog>
+Ã¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•ÂÃ¢•Â -->
+<dialog id="mobile-menu" class="mob-dialog">
+  <div class="mob-panel">
+
+    <!-- Panel header -->
+    <div class="mob-panel-header">
+      <a href="index.html" class="nav-brand" onclick="closeMobileMenu()">
+        <img src="assets/img/20260325_155744.png" alt="AWEDI Logo" class="brand-logo-img" style="height:38px;">
+        <div>
+          <div class="brand-name">AWEDI</div>
+          <div class="brand-tagline">African Women in Energy Development Initiative</div>
+        </div>
+      </a>
+      <button class="mob-close-btn" id="mob-close-btn" aria-label="Close menu">
+        <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <!-- Nav links -->
+    <nav class="mob-nav">
+      <a href="index.html" class="mob-nav-link" id="mn-home" onclick="closeMobileMenu()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Home
+      </a>
+      <a href="about.html" class="mob-nav-link" id="mn-about" onclick="closeMobileMenu()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>About Us
+      </a>
+      <a href="programs.html" class="mob-nav-link" id="mn-programs" onclick="closeMobileMenu()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Programs
+      </a>
+      <a href="volunteer.html" class="mob-nav-link" id="mn-volunteer" onclick="closeMobileMenu()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>Volunteer
+      </a>
+      <a href="donate.html" class="mob-nav-link" id="mn-donate" onclick="closeMobileMenu()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Donate
+      </a>
+      <a href="news.html" class="mob-nav-link" id="mn-news" onclick="closeMobileMenu()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>News
+      </a>
+      <a href="contact.html" class="mob-nav-link" id="mn-contact" onclick="closeMobileMenu()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Contact
+      </a>
+    </nav>
+
+    <!-- Auth buttons -->
+    <div class="mob-auth" id="mob-auth-btns">
+      <a href="signin.html" class="mob-btn-ghost" onclick="closeMobileMenu()">Sign In</a>
+      <a href="signup.html" class="mob-btn-fill" onclick="closeMobileMenu()">Join Us</a>
+    </div>
+
+  </div>
+</dialog>
+
+
+
+
+
+
+

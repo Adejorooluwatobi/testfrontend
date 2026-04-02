@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us — AWEDI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="assets/css/style.css?v=2.1.6">
+</head>
+<body>
+    <div id="toast-container"></div>
+    <div id="header-placeholder"></div>
+
+    <main class="page-wrap">
+        <div class="main-content">
+      <section class="section" style="background:linear-gradient(135deg,#1c1a17,#2d2a24);padding:80px 5% 60px;">
+        <div class="section-inner" style="text-align:center;">
+          <h1 id="contact-title" style="font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,52px);font-weight:900;color:#fff;margin-bottom:14px;">Loading...</h1>
+          <p id="contact-desc" style="font-size:16px;color:rgba(255,255,255,.65);max-width:520px;margin:0 auto;line-height:1.7;">...</p>
+        </div>
+      </section>
+      <section class="section">
+        <div class="section-inner">
+          <div class="contact-grid">
+            <div>
+              <div class="contact-info-card">
+                <div id="contact-header" style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;margin-bottom:16px;">Contact Information</div>
+                <div class="contact-info-item"><div class="ci-icon">📍</div><div><div class="ci-label">Office Address</div><div class="ci-val" id="contact-office">Loading...</div></div></div>
+                <div class="contact-info-item"><div class="ci-icon">📞</div><div><div class="ci-label">Phone</div><div class="ci-val" id="contact-phone">Loading...</div></div></div>
+                <div class="contact-info-item"><div class="ci-icon">✉️</div><div><div class="ci-label">Email</div><div class="ci-val" id="contact-email">Loading...</div></div></div>
+                <div class="contact-info-item"><div class="ci-icon">🕙</div><div><div class="ci-label">Office Hours</div><div class="ci-val">Mon–Fri: 8:00 AM – 6:00 PM WAT<br/>Saturday: 9:00 AM – 2:00 PM</div></div></div>
+              </div>
+              <div class="map-placeholder">📍 Map Loading…</div>
+            </div>
+            <div class="card card-pad">
+              <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;margin-bottom:6px;">Send Us a Message</div>
+              <div style="font-size:13.5px;color:var(--muted);margin-bottom:22px;">We respond to all messages within 24 business hours.</div>
+              <form id="contact-form">
+                <div class="form-grid">
+                  <div class="fg"><label class="fl">First Name</label><input class="fi" id="contact-fname" type="text" placeholder="Your first name" required/></div>
+                  <div class="fg"><label class="fl">Last Name</label><input class="fi" id="contact-lname" type="text" placeholder="Your last name"/></div>
+                  <div class="fg"><label class="fl">Email</label><input class="fi" id="contact-email-input" type="email" placeholder="your@email.com" required/></div>
+                  <div class="fg"><label class="fl">Phone</label><input class="fi" id="contact-phone-input" type="tel" placeholder="+234 …"/></div>
+                  <div class="fg full"><label class="fl">Subject</label><select class="fs" id="contact-subject"><option>General Enquiry</option><option>Partnership Proposal</option><option>Volunteer Application</option><option>Donation Enquiry</option><option>Media / Press</option><option>Report a Concern</option></select></div>
+                  <div class="fg full"><label class="fl">Your Message</label><textarea class="fta" id="contact-message" placeholder="Tell us how we can help or how you'd like to get involved…" required></textarea></div>
+                </div>
+                <div class="form-footer">
+                  <button type="reset" class="btn-secondary">Clear</button>
+                  <button type="submit" id="contact-submit-btn" class="btn-submit">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:16px;height:16px;"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>Send Message
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+        <div id="footer-placeholder"></div>
+    </main>
+
+    <script src="assets/js/config.js?v=2.1.16"></script>
+    <script src="assets/js/dummy-data.js?v=2.1.16"></script>
+    <script src="assets/js/script.js?v=2.1.16"></script>
+    <script src="assets/js/contact.js?v=2.1.16"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof loadIncludes === 'function') loadIncludes();
+            if (typeof initContact === 'function') initContact();
+        });
+    </script>
+</body>
+</html>

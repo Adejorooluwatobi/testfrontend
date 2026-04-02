@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate — AWEDI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="assets/css/style.css?v=2.1.5">
+</head>
+<body>
+    <div id="toast-container"></div>
+    <div id="header-placeholder"></div>
+
+    <main class="page-wrap">
+        <div class="main-content">
+      <section class="section" style="background:linear-gradient(135deg,#2a1a0a,#c0522a);padding:80px 5% 60px;">
+        <div class="section-inner" style="text-align:center;">
+          <h1 id="donate-banner-title" style="font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,52px);font-weight:900;color:#fff;margin-bottom:14px;">Loading...</h1>
+          <p id="donate-banner-desc" style="font-size:16px;color:rgba(255,255,255,.75);max-width:520px;margin:0 auto;line-height:1.7;">Please wait while we load impact data...</p>
+        </div>
+      </section>
+      <section class="section">
+        <div class="section-inner">
+          <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:start;" id="donate-grid">
+            <div class="card card-pad">
+              <h3 id="donate-banner-header" style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;margin-bottom:18px;">Choose Your Impact</h3>
+              
+              <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:18px;" id="donate-amounts-grid">
+                <!-- Populated by JS -->
+              </div>
+
+              <div id="donate-custom-row" style="display:none;margin-bottom:16px;">
+                <input class="fi" id="donate-custom-input" type="number" placeholder="Enter custom amount in ₦" style="margin-bottom:0;"/>
+              </div>
+
+              <form id="donate-form">
+              <div class="form-grid" style="margin-bottom:16px;">
+                <div class="fg">
+                  <label class="fl">Program to Support</label>
+                  <select class="fs" id="donate-program-select">
+                    <option>General Fund (Recommended)</option>
+                    <option>Child Literacy Drive</option>
+                    <option>Clean Water Initiative</option>
+                    <option>Rural Health Outreach</option>
+                    <option>Women in Business</option>
+                    <option>Youth Skills Training</option>
+                  </select>
+                </div>
+                <div class="fg">
+                  <label class="fl">Frequency</label>
+                  <select class="fs" id="donate-frequency">
+                    <option>One-time</option>
+                    <option>Monthly</option>
+                    <option>Quarterly</option>
+                    <option>Annually</option>
+                  </select>
+                </div>
+              </div>
+              <div class="divider" style="margin:16px 0;"></div>
+              <h4 style="font-family:'Playfair Display',serif;font-size:16px;margin-bottom:14px;">Donor Information</h4>
+              <div class="form-grid">
+                <div class="fg full"><label class="fl">Full Name *</label><input class="fi" id="donate-fullname" type="text" placeholder="e.g. John Doe" required/></div>
+                <div class="fg full"><label class="fl">Email Address *</label><input class="fi" id="donate-email" type="email" placeholder="Receipt will be sent here" required/></div>
+              </div>
+              <button type="submit" id="donate-submit-btn" class="btn-donate" style="width:100%;margin-top:20px;justify-content:center;font-size:16px;">Complete Donation — ₦5,000 →</button>
+              </form>
+
+              <div style="text-align:center;margin-top:12px;font-size:12px;color:var(--muted);">🔒 Secured by Paystack · SSL Encrypted · All donations tax-deductible</div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:16px;">
+              <div id="donate-addition-col">
+                <!-- Populated by JS -->
+              </div>
+              <div id="donate-cards-col">
+                <!-- Populated by JS -->
+              </div>
+              <div id="donate-details-col">
+                <!-- Populated by JS -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+        <div id="footer-placeholder"></div>
+    </main>
+
+    <script src="assets/js/config.js?v=2.1.5"></script>
+    <script src="assets/js/dummy-data.js?v=2.1.5"></script>
+    <script src="assets/js/script.js?v=2.1.5"></script>
+    <script src="assets/js/donate.js?v=2.1.5"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof loadIncludes === 'function') loadIncludes();
+            if (typeof initDonate === 'function') initDonate();
+        });
+    </script>
+</body>
+</html>

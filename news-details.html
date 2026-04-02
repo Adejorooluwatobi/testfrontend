@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Detail — AWEDI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="assets/css/style.css?v=2.1.6">
+    <style>
+        .news-hero { height: 60vh; min-height: 500px; position: relative; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; padding: 0 5%; }
+        .news-hero-bg { position: absolute; inset: 0; z-index: 0; background: #1a2a4a; }
+        .news-hero-bg img { width: 100%; height: 100%; object-fit: cover; opacity: 0.5; }
+        .news-hero-content { position: relative; z-index: 2; max-width: 900px; }
+        .news-details-meta { margin-bottom: 25px; display: flex; align-items: center; justify-content: center; gap: 20px; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        .news-details-tag { padding: 5px 15px; background: var(--accent); border-radius: 30px; }
+        .news-details-title { font-family: 'Playfair Display', serif; font-size: clamp(32px, 6vw, 64px); font-weight: 900; line-height: 1.1; margin-bottom: 30px; }
+        .article-wrap { max-width: 800px; margin: -80px auto 80px; padding: 60px; background: var(--surface); border-radius: 32px; box-shadow: 0 40px 100px rgba(0,0,0,0.1); position: relative; z-index: 10; border: 1px solid var(--border); overflow: hidden; }
+        .article-body { font-size: 19px; line-height: 1.8; color: var(--text); word-break: break-word; overflow-wrap: anywhere; }
+        .article-body p { margin-bottom: 28px; word-break: break-word; overflow-wrap: anywhere; }
+        .article-share { margin-top: 50px; padding-top: 30px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+        @media (max-width: 768px) { .article-wrap { margin: -40px 15px 60px; padding: 30px 20px; } }
+    </style>
+</head>
+<body>
+    <div id="toast-container"></div>
+    <div id="header-placeholder"></div>
+
+    <main class="page-wrap">
+        <section class="news-hero">
+            <div id="news-hero-bg" class="news-hero-bg">
+                <!-- Image or Gradient -->
+            </div>
+            <div class="news-hero-content">
+                <div class="news-details-meta">
+                    <span id="news-tag" class="news-details-tag">CATEGORY</span>
+                    <span id="news-date">DATE</span>
+                </div>
+                <h1 id="news-title" class="news-details-title">Loading...</h1>
+            </div>
+        </section>
+
+        <article class="article-wrap">
+            <div id="news-content" class="article-body">
+                <p>Retrieving the full story from our field archives...</p>
+            </div>
+
+            <div class="article-share">
+                <div style="font-weight:700; color:var(--muted);">SHARE STORY</div>
+                <div style="display:flex; gap:12px;">
+                    <button onclick="toast('info','Share','Link copied to clipboard!','🔗')" style="width:40px; height:40px; border-radius:50%; border:1px solid var(--border); display:flex; align-items:center; justify-content:center; cursor:pointer;">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div style="margin-top:40px; text-align:center;">
+                <a href="news.html" class="btn-ol" style="display:inline-block; padding:12px 30px; text-decoration:none;">Back to All News</a>
+            </div>
+        </article>
+
+        <div id="footer-placeholder"></div>
+    </main>
+
+    <script src="assets/js/config.js?v=2.1.16"></script>
+    <script src="assets/js/dummy-data.js?v=2.1.16"></script>
+    <script src="assets/js/script.js?v=2.1.16"></script>
+    <script src="assets/js/news-details.js?v=2.1.16"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof loadIncludes === 'function') loadIncludes();
+        });
+    </script>
+</body>
+</html>
