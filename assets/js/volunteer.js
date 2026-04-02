@@ -115,6 +115,33 @@ async function initVolunteer() {
     // Wire form
     const form = document.getElementById('vol-app-form');
     if (form) form.addEventListener('submit', submitVolunteerApp);
+
+    // Dynamic Program Dropdown Population
+    try {
+        const progRes = await fetch(`${apiUrl}/program`, { cache: 'no-cache' });
+        let cards = [];
+        if (progRes.ok) {
+            const pData = await progRes.json();
+            const raw = Array.isArray(pData) ? pData[0] : pData;
+            cards = raw?.card || [];
+        } else {
+            throw new Error();
+        }
+        
+        const select = document.getElementById('vol-program');
+        if (select && cards.length > 0) {
+            const programTitles = cards.map(c => c.title).filter(t => t);
+            select.innerHTML = ['Any Program', ...programTitles].map(t => `<option>${t}</option>`).join('');
+        }
+    } catch (err) {
+        // Fallback to dummy data for dropdown if backend fails
+        const select = document.getElementById('vol-program');
+        const fallbackCards = (window.DUMMY_DATA && window.DUMMY_DATA.programs) ? window.DUMMY_DATA.programs.card : [];
+        if (select && fallbackCards.length > 0) {
+            const programTitles = fallbackCards.map(c => c.title);
+            select.innerHTML = ['Any Program', ...programTitles].map(t => `<option>${t}</option>`).join('');
+        }
+    }
 }
 
 window.initVolunteer = initVolunteer;
