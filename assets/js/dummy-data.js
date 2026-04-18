@@ -20,8 +20,7 @@ const DUMMY_DATA = {
         whatWeDo: {
             header: 'What We Do',
             title: 'Programs Making<br/>Real Impact',
-            description: 'From literacy to clean water — our six flagship programs address the most pressing needs of communities across West Africa.',
-            items: [] // Populated from programs
+            description: 'From literacy to clean water — our six flagship programs address the most pressing needs of communities across West Africa.'
         },
         quote: {
             text: 'Before RootsBridge came, my children walked 5km for water. Now we have a borehole 200 meters from our door. This is everything.',

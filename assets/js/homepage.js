@@ -60,8 +60,8 @@ function renderWhatWeDo(data, programs) {
     if (tit) tit.innerHTML = data.title || defaults.title;
     if (sub) sub.textContent = data.description || defaults.description;
     
-    // Prioritize specific items curated for the homepage if available
-    const activePrograms = (Array.isArray(data.items) && data.items.length) ? data.items : (programs || []);
+    // Automatically use the centralized Programs list (ignoring legacy homepage-specific overrides)
+    const activePrograms = (programs && programs.length) ? programs : (data.items || []);
 
     if (grid && activePrograms && activePrograms.length) {
         // Only show first 3 for homepage
@@ -202,9 +202,12 @@ async function initHomepage() {
         if (!hRes.ok) throw new Error('Backend unreachable');
 
         const hData = await hRes.json();
-        const pData = pRes.ok ? await pRes.json() : [];
+        const pData = pRes.ok ? await pRes.json() : null;
         const home = Array.isArray(hData) ? hData[0] : hData;
-        const progs = Array.isArray(pData) ? pData : (pData?.card || []);
+
+        // Correctly extract the cards array from the program response (handle single object or array)
+        const programObj = Array.isArray(pData) ? pData[0] : pData;
+        const progs = programObj?.card || [];
 
         renderHero(home?.banner);
         renderWhatWeDo(home?.whatWeDo, progs);
@@ -221,8 +224,9 @@ async function initHomepage() {
         setTimeout(() => {
             if (window.DUMMY_DATA && window.DUMMY_DATA.homepage) {
                 const fallback = window.DUMMY_DATA.homepage;
+                const progFallback = window.DUMMY_DATA.programs?.card || [];
                 renderHero(fallback.banner);
-                renderWhatWeDo(fallback.whatWeDo, []);
+                renderWhatWeDo(fallback.whatWeDo, progFallback);
                 renderQuote(fallback.quote);
                 renderTestimonials(fallback.testimonials);
                 renderPartners(fallback.partners);
